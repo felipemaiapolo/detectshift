@@ -1,1 +1,1 @@
-# The package will be available before May 28th of 2022.
+# The package is going to be available before May 28th of 2022.
