@@ -1,3 +1,3 @@
-from . import tools
-from . import tests
-from . import cdist
+from .tools import *
+from .tests import *
+from .cdist import *
