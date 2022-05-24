@@ -6,7 +6,7 @@ from catboost import CatBoostClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import RidgeCV
 from catboost import CatBoostRegressor
-from .utils import *
+from .tools import *
 
 class cde_reg:
     '''
