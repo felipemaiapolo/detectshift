@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-from .utils import *
+from .tools import *
 
 def Permut(Zs, Zt, shift_model, B=500, verbose=True):
     
