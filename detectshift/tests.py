@@ -279,20 +279,20 @@ def ShiftDiagnostics(Xs_test, ys_test, Xt_test, yt_test,
     Zt_test = pd.concat([Xt_test.reset_index(drop=True), yt_test.reset_index(drop=True)], axis=1) 
     tot=Permut(Zs_test, Zt_test, totshift_model, B=B, verbose = verbose)
     
-    if verbose: print("Calculating p-value for label shift...")
+    if verbose: print("\nCalculating p-value for label shift...")
     if labshift_model==None: 
         lab=PermutDiscrete(ys_test, yt_test, B=B, verbose = verbose)
     else: 
         lab=Permut(ys_test, yt_test, labshift_model, B=B, verbose = verbose)
     
-    if verbose: print("Calculating p-value for covariate shift...")
+    if verbose: print("\nCalculating p-value for covariate shift...")
     cov=Permut(Xs_test, Xt_test, covshift_model, B=B, verbose = verbose)
     
-    if verbose: print("Calculating p-value for concept shift type 1...")
+    if verbose: print("\nCalculating p-value for concept shift type 1...")
     conc1=LocalPermut(Xs_test, ys_test, Xt_test, yt_test, 
                       totshift_model, labshift_model, task, n_bins, B=B, verbose = verbose)
     
-    if verbose: print("Calculating p-value for concept shift type 2...")
+    if verbose: print("\nCalculating p-value for concept shift type 2...")
     conc2=CondRand(Xs_test, ys_test, Xt_test, yt_test, 
                    cd_model, totshift_model, covshift_model, B=B, verbose = verbose)
     
