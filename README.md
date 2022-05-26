@@ -57,6 +57,8 @@ If $Q$ denotes the source distribution and $P$ denotes the target distribution, 
 
 The test statistic used is a KL divergence estimator while the p-values are obtained through simulation (permutation/randomization) tests.
 
+Check [**our paper**](https://arxiv.org/abs/2205.08340) for more details and precise language. 
+
 --------------
 
 <a name="2"></a>
