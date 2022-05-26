@@ -40,12 +40,12 @@ In this notebook, we showcase an use example of dataset shift diagnostics when t
 
 In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
 
-- **Regression:**  
+- **Regression:** 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression1.ipynb)
  
 In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is continuous.
 
-- **Regression with categorical features:**  
+- **Regression with categorical features:** 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression2.ipynb)
 
 In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is quantitative but discrete (with many different values). Also, in this example, we make use of categorical features, exploiting [Catboost](https://catboost.ai/) functionality.
@@ -61,7 +61,7 @@ In this notebook, we showcase an use example of dataset shift diagnostics when t
 
 If (1) denotes the source distribution and (2) denotes the target distribution, the null hypotheses we want to test are:
 
-$$H_{0,\text{D}}:\mathcal{P}^{(1)}_{\X,Y}=\mathcal{P}^{(2)}_{\X,Y}$$
+$$H_{0,D}:P^{(1)}_{X,Y}=P^{(2)}_{X,Y}$$
 
 - **[Total Dataset Shift]:** $H_{0,\text{D}}:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
 - **[Covariate Shift]:** $H_{0,\text{C}}:\mathcal{P}^{(1)}_{X}=\mathcal{P}^{(2)}_{X}$ 
