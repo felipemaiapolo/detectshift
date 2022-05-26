@@ -47,17 +47,13 @@ Below are the links to some demonstrations on how to use *DetectShift* in practi
 ## 1\. Introduction / 
 *DetectShift* aims to quantify and test which types of dataset shift occur in a dataset. 
 
-If (1) denotes the source distribution and (2) denotes the target distribution, the null hypotheses we want to test are:
+If $Q$ denotes the source distribution and $P$ denotes the target distribution, the null hypotheses we want to test are:
 
-$$H_0:P^{(2)}_{X,Y}=Q_{X,Y}$$
-
-$$\beta_{i }(x) =$$
-
-- **[Total Dataset Shift]:** $H_0:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
+- **[Total Dataset Shift]:** $H_{0,\text{D}}:P_{X,Y}=Q_{X,Y}$ 
 - **[Covariate Shift]:** $H_{0,\text{C}}:P_{X}=Q_{X}$ 
-- **[Label Shift]:** $H_{0,\text{L}}:\mathcal{P}^{(1)}_{Y}=\mathcal{P}^{(2)}_{Y}$ 
-- **[Concept Shift 1]:** $H_{0,\text{C1}}:\mathcal{P}^{(1)}_{X|Y}=\mathcal{P}^{(2)}_{X|Y}$
-- **[Concept Shift 2]:** $H_{0,\text{C2}}: \mathcal{P}^{(1)}_{Y|X}=\mathcal{P}^{(2)}_{Y|X}$ 
+- **[Label Shift]:** $H_{0,\text{L}}:P_{Y}=Q_{Y}$ 
+- **[Concept Shift 1]:** $H_{0,\text{C1}}:P_{X|Y}=Q_{X|Y}$
+- **[Concept Shift 2]:** $H_{0,\text{C2}}: P_{Y|X}=Q_{Y|X}$ 
 
 The test statistic used is a KL divergence estimator while the p-values are obtained through simulation (permutation/randomization) tests.
 
