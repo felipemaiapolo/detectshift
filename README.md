@@ -49,7 +49,7 @@ Below are the links to some demonstrations on how to use *DetectShift* in practi
 
 If (1) denotes the source distribution and (2) denotes the target distribution, the null hypotheses we want to test are:
 
-$$H_{0,D}:P^{(1)}_{X,Y}=P^{(2)}_{X,Y}$$
+$$H_0:P_{X,Y}=Q_{X,Y}$$
 
 $$\beta_{i }(x) =$$
 
