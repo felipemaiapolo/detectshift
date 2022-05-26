@@ -20,8 +20,8 @@ In case you have any question or suggestion, please get in touch sending us an e
 ## Summary
 
 0. [Quick start (demo)](#0)
-1. [Introduction / Installing package](#1)
-2. [Functions ](#2)
+1. [Introduction](#1)
+2. [Installing package](#2)
 
 --------------
 
