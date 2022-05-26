@@ -30,7 +30,7 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 Below are the links to some demonstrations on how to use *DetectShift* in practice:
 
-- **[Binary classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)  ** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
+- **[Binary classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
 
 - **[Multinomial classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
 
@@ -50,6 +50,8 @@ Below are the links to some demonstrations on how to use *DetectShift* in practi
 If (1) denotes the source distribution and (2) denotes the target distribution, the null hypotheses we want to test are:
 
 $$H_{0,D}:P^{(1)}_{X,Y}=P^{(2)}_{X,Y}$$
+
+$$\beta_{i }(x) =$$
 
 - **[Total Dataset Shift]:** $H_{0,\text{D}}:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
 - **[Covariate Shift]:** $H_{0,\text{C}}:\mathcal{P}^{(1)}_{X}=\mathcal{P}^{(2)}_{X}$ 
