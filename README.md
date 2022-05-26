@@ -30,24 +30,27 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 Below are the links to some demonstrations on how to use *DetectShift* in practice:
 
-- **Binary classification** 
+- **Binary classification:** 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)  
 
 In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
 
-
-
-- **Multinomial classification** : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
-
+- **Multinomial classification:** 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)
 
-- **Regression** : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is continuous.
+In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
 
+- **Regression:**  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression1.ipynb)
  
-- **Regression with categorical features** : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is quantitative but discrete (with many different values). Also, in this example, we make use of categorical features, exploiting [Catboost](https://catboost.ai/) functionality.
+In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is continuous.
 
+- **Regression with categorical features:**  
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression2.ipynb)
+
+In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is quantitative but discrete (with many different values). Also, in this example, we make use of categorical features, exploiting [Catboost](https://catboost.ai/) functionality.
+
+
 
 
 --------------
@@ -58,11 +61,13 @@ In this notebook, we showcase an use example of dataset shift diagnostics when t
 
 If (1) denotes the source distribution and (2) denotes the target distribution, the null hypotheses we want to test are:
 
-- **[Total Dataset Shift]:** $H_{0,\text{D}}:\mathcal{P}^{(1)}_{\X,Y}=\mathcal{P}^{(2)}_{\X,Y}$ 
-- **[Covariate Shift]:** $H_{0,\text{C}}:\mathcal{P}^{(1)}_{\X}=\mathcal{P}^{(2)}_{\X}$ 
+$$H_{0,\text{D}}:\mathcal{P}^{(1)}_{\X,Y}=\mathcal{P}^{(2)}_{\X,Y}$$
+
+- **[Total Dataset Shift]:** $H_{0,\text{D}}:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
+- **[Covariate Shift]:** $H_{0,\text{C}}:\mathcal{P}^{(1)}_{X}=\mathcal{P}^{(2)}_{X}$ 
 - **[Label Shift]:** $H_{0,\text{L}}:\mathcal{P}^{(1)}_{Y}=\mathcal{P}^{(2)}_{Y}$ 
-- **[Concept Shift 1]:** $H_{0,\text{C1}}:\mathcal{P}^{(1)}_{\X|Y}=\mathcal{P}^{(2)}_{\X|Y}$
-- **[Concept Shift 2]:** $H_{0,\text{C2}}: \mathcal{P}^{(1)}_{Y|\X}=\mathcal{P}^{(2)}_{Y|\X}$ 
+- **[Concept Shift 1]:** $H_{0,\text{C1}}:\mathcal{P}^{(1)}_{X|Y}=\mathcal{P}^{(2)}_{X|Y}$
+- **[Concept Shift 2]:** $H_{0,\text{C2}}: \mathcal{P}^{(1)}_{Y|X}=\mathcal{P}^{(2)}_{Y|X}$ 
 
 The test statistic used is a KL divergence estimator while the p-values are obtained through simulation (permutation/randomization) tests.
 
