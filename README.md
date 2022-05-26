@@ -31,10 +31,7 @@ In case you have any question or suggestion, please get in touch sending us an e
 Below are the links to some demonstrations on how to use *DetectShift* in practice:
 
 - **Binary classification** : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification1.ipynb)
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/legalnlp/blob/main/demo/BERT/BERT_TUTORIAL.ipynb)
- 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/legalnlp/blob/main/demo/BERT/BERT_TUTORIAL.ipynb) 
  
 - **Multinomial classification** : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)
