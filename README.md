@@ -44,7 +44,7 @@ Below are the links to some demonstrations on how to use *DetectShift* in practi
 --------------
 
 <a name="1"></a>
-## 1\. Introduction / 
+## 1\. Introduction 
 *DetectShift* aims to quantify and test which types of dataset shift occur in a dataset. 
 
 If $Q$ denotes the source distribution and $P$ denotes the target distribution, the null hypotheses we want to test are:
@@ -62,7 +62,7 @@ Check [**our paper**](https://arxiv.org/abs/2205.08340) for more details and pre
 --------------
 
 <a name="2"></a>
-## 2\. Installing package / 
+## 2\. Installing package 
 
 
 You can install our package running the following command on terminal
