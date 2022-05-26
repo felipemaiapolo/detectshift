@@ -30,7 +30,10 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 Below are the links to some demonstrations on how to use *DetectShift* in practice:
 
-- **Binary classification** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb) : in this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
+- **Binary classification** 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)  
+
+In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
 
 
 
