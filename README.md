@@ -50,10 +50,10 @@ Below are the links to some demonstrations on how to use *DetectShift* in practi
 If $Q$ denotes the source distribution and $P$ denotes the target distribution, the null hypotheses we want to test are:
 
 - **[Total Dataset Shift]:** $$H_{0,\text{D}}:P_{X,Y}=Q_{X,Y}$$
-- **[Covariate Shift]:** $H_{0,\text{C}}:P_{X}=Q_{X}$ 
-- **[Label Shift]:** $H_{0,\text{L}}:P_{Y}=Q_{Y}$ 
-- **[Concept Shift 1]:** $H_{0,\text{C1}}:P_{X|Y}=Q_{X|Y}$
-- **[Concept Shift 2]:** $H_{0,\text{C2}}: P_{Y|X}=Q_{Y|X}$ 
+- **[Covariate Shift]:** $$H_{0,\text{C}}:P_{X}=Q_{X}$$
+- **[Label Shift]:** $$H_{0,\text{L}}:P_{Y}=Q_{Y}$$ 
+- **[Concept Shift 1]:** $$H_{0,\text{C1}}:P_{X|Y}=Q_{X|Y}$$
+- **[Concept Shift 2]:** $$H_{0,\text{C2}}: P_{Y|X}=Q_{Y|X}$$ 
 
 The test statistic used is a KL divergence estimator while the p-values are obtained through simulation (permutation/randomization) tests.
 
