@@ -53,8 +53,8 @@ $$H_0:P_{X,Y}=Q_{X,Y}$$
 
 $$\beta_{i }(x) =$$
 
-- **[Total Dataset Shift]:** $H_{0,\text{D}}:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
-- **[Covariate Shift]:** $H_{0,\text{C}}:\mathcal{P}^{(1)}_{X}=\mathcal{P}^{(2)}_{X}$ 
+- **[Total Dataset Shift]:** $H_0:\mathcal{P}^{(1)}_{X,Y}=\mathcal{P}^{(2)}_{X,Y}$ 
+- **[Covariate Shift]:** $H_{0,\text{C}}:P_{X}=Q_{X}$ 
 - **[Label Shift]:** $H_{0,\text{L}}:\mathcal{P}^{(1)}_{Y}=\mathcal{P}^{(2)}_{Y}$ 
 - **[Concept Shift 1]:** $H_{0,\text{C1}}:\mathcal{P}^{(1)}_{X|Y}=\mathcal{P}^{(2)}_{X|Y}$
 - **[Concept Shift 2]:** $H_{0,\text{C2}}: \mathcal{P}^{(1)}_{Y|X}=\mathcal{P}^{(2)}_{Y|X}$ 
