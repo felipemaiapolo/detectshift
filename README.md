@@ -30,13 +30,13 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 Below are the links to some demonstrations on how to use *DetectShift* in practice:
 
-- **[Binary classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
+- **[Binary classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/demo/Classification1.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is binary.
 
-- **[Multinomial classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Classification2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
+- **[Multinomial classification:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/demo/Classification2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is discrete with more than 2 values.
 
-- **[Regression:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression1.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is continuous.
+- **[Regression:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/demo/Regression1.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is continuous.
 
-- **[Regression with categorical features:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/Regression2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is quantitative but discrete (with many different values). Also, in this example, we make use of categorical features, exploiting [Catboost](https://catboost.ai/) functionality.
+- **[Regression with categorical features:](https://colab.research.google.com/github/felipemaiapolo/detectshift/blob/main/demo/Regression2.ipynb)** In this notebook, we showcase an use example of dataset shift diagnostics when the response variable $Y$ is quantitative but discrete (with many different values). Also, in this example, we make use of categorical features, exploiting [Catboost](https://catboost.ai/) functionality.
 
 
 
