@@ -24,9 +24,9 @@ In case you have any question or suggestion, please get in touch sending us an e
     1. [Installing and loading package ](#1.1)
     2. [Step to use](#1.2)
 2. [Modules](#2)
-    1. [*tools*](#2.1)
-    2. [*cdist*](#2.2)
-    3. [*tests*](#2.3)
+    1. [`tools`](#2.1)
+    2. [`cdist`](#2.2)
+    3. [`tests`](#2.3)
 
 
 --------------
