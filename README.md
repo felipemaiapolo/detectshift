@@ -22,7 +22,7 @@ In case you have any question or suggestion, please get in touch sending us an e
 0. [Quick start (demo)](#0)
 1. [Introduction](#1)
     1. [Installing and loading package ](#1.1)
-    2. [Step to use](#1.2)
+    2. [Steps to use](#1.2)
 2. [Modules](#2)
     1. [`tools`](#2.1)
     2. [`cdist`](#2.2)
