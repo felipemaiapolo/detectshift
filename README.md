@@ -24,9 +24,9 @@ In case you have any question or suggestion, please get in touch sending us an e
     1. [Installing and loading package ](#1.1)
     2. [Step to use](#1.2)
 2. [Modules](#2)
-    1. [*tools*](#2.1)
-    2. [*cdist*](#2.2)
-    3. [*tests*](#2.3)
+    1. [`tools'](#2.1)
+    2. [`cdist'](#2.2)
+    3. [`tests'](#2.3)
 
 
 --------------
@@ -85,10 +85,10 @@ import detectshift as ds
 If you take a look at *DetectShift* [demonstrations](#0), you will realize that following some steps to use *DetectShift* are needed. The steps are:
 
 - Loading *DetectShift*;
-- Preparing data with *prep_data* function;
-- Instantiating and training models to estimate KL divergence using *KL* class;
-- Instantiating and training models to estimate the conditional distirbution of $Y|X$ using *cdist* module (in case of testing for concept shift of type 2;
-- Testing different types of shift using the *tests* module. 
+- Preparing data with `prep_data' function;
+- Instantiating and training models to estimate KL divergence using `KL' class;
+- Instantiating and training models to estimate the conditional distirbution of $Y|X$ using `cdist' module (in case of testing for concept shift of type 2;
+- Testing different types of shift using the `tests' module. 
 
 
 --------------
@@ -97,12 +97,9 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
 ## 2\. Modules
 
 <a name="2.1"></a>
-### 2.1\.  *tools*
+### 2.1\.  `tools'
 
 #### 2.1.1\. `prep_data(Xs, ys, Xt, yt, test=.1, task=None, random_state=42)` 
-    
-
-    
    
     Function that gets data and prepare it to run the tests
     
