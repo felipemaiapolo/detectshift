@@ -120,39 +120,39 @@ Model to estimate the DKL using the classification approach to density ratio est
    
 - `__init__(self, boost=True, validation_split=.1, cat_features=None, cv=5)`
 
-    Input:  (i)   boost: if TRUE, we use CatBoost as classifier - otherwise, we use logistic regression;
-            (ii)  validation_split: portion of the training data (Zs,Zt) used to early stop CatBoost - this parameter is not used if 'boost'==FALSE;
-            (iii) cat_features: list containing all categorical features indices - used only if 'boost'==TRUE;
-            (iv)  cv: number of CV folds used to validate the logistic regression classifier - this parameter is not used if 'boost'==TRUE. Hyperparameter values tested are specified in Scikit-Learn's "LogisticRegressionCV" class. If cv==None, then we use the default Scikit-Learn config. for LogisticRegression;
+        Input:  (i)   boost: if TRUE, we use CatBoost as classifier - otherwise, we use logistic regression;
+                (ii)  validation_split: portion of the training data (Zs,Zt) used to early stop CatBoost - this parameter is not used if 'boost'==FALSE;
+                (iii) cat_features: list containing all categorical features indices - used only if 'boost'==TRUE;
+                (iv)  cv: number of CV folds used to validate the logistic regression classifier - this parameter is not used if 'boost'==TRUE. Hyperparameter values tested are specified in Scikit-Learn's "LogisticRegressionCV" class. If cv==None, then we use the default Scikit-Learn config. for LogisticRegression;
 
 
 - `fit(self, Zs, Zt, random_state=0)`
 
-   Function that fits the classification model in order to estimate the density ratio w=p_t/p_s (target dist. over source dist.)
-   
-   Input:  (i)   Zs: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the source distribution - use the 'prep_data' function to prepare your data;
-           (ii)  Zt: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the target distribution - use the 'prep_data' function to prepare your data;
-           (iii) random_state: seed used in the data splitting and model training
-           
-   Output: None
+       Function that fits the classification model in order to estimate the density ratio w=p_t/p_s (target dist. over source dist.)
+
+       Input:  (i)   Zs: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the source distribution - use the 'prep_data' function to prepare your data;
+               (ii)  Zt: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the target distribution - use the 'prep_data' function to prepare your data;
+               (iii) random_state: seed used in the data splitting and model training
+
+       Output: None
    
    
 - `predict_w(self, Z, eps=10**-10)`
 
-   Function that predicts the density ratio w=p_t/p_s (target dist. over source dist.)
-   
-   Input:  (i) Z: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the source distribution;
-     
-   Output: (ii) An array containing the predicted density ratio w=p_t/p_s for each row of Z
+       Function that predicts the density ratio w=p_t/p_s (target dist. over source dist.)
+
+       Input:  (i) Z: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the source distribution;
+
+       Output: (ii) An array containing the predicted density ratio w=p_t/p_s for each row of Z
 
 
 - `predict(self, Zt, eps=10**-10)` 
        
-   Function that infers the DKL of the distirbutions that generated Zs and Zt
-   
-   Input:  (i) Zt: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the target distribution;
-   
-   Output: (i) Point estimate of DKL
+       Function that infers the DKL of the distirbutions that generated Zs and Zt
+
+       Input:  (i) Zt: bidimensional array or Pandas DataFrame (usually X or (X,y)) coming from the target distribution;
+
+       Output: (i) Point estimate of DKL
 
 
 
