@@ -155,5 +155,33 @@ Model to estimate the DKL using the classification approach to density ratio est
        Output: (i) Point estimate of DKL
 
 
+<a name="2.2"></a>
+### 2.2\.  `cdist'
 
+#### 2.2.1\. Class: `cde_reg`
+
+Model for Y|X=x. We assume that Y|X=x ~ Normal(f(x),sigma2), where f(x) is a function of the features. (This is class in Scikit-Learn style)
+
+*The user could adapt this class in order to use different models than the Normal one.*
+
+- `__init__(self, boost=True, validation_split=.1, cat_features=None, cv=5)`
+        
+        Input:  (i)   boost: if TRUE, we use CatBoost as regressor - otherwise, we use linear regression (OLS or Ridge);
+                (ii)  validation_split: portion of the training data used to early stop CatBoost and to estimate sigma2 - this parameter is not used if 'boost'==FALSE;
+                (iii) cat_features: list containing all categorical features indices - used only if 'boost'==TRUE;
+                (iv)  cv: number of CV folds used to validade Ridge regression classifier - this parameter is not used if 'boost'==TRUE. If cv==None, then we use the default Scikit-Learn config. for LinearRegression;
+
+
+- `fit(self, X, y, random_seed=None)`
+        
+Function that fits the conditional density model;
+
+        Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
+                (ii)  y: Pandas Dataframe of label - use the 'prep_data' function to prepare your data;
+        Output: None
+ 
+- `sample(self, X)`
+        
+Function that samples Y|X=x using the probabilistic model Y|X=x ~ Normal(f(x),sigma2)) with fitted model
+       
 
