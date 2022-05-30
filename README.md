@@ -99,6 +99,8 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
 <a name="2.1"></a>
 ### 2.1\.  `tools'
 
+Module containing general tools. Main functionalities include a function to prepare data and a class of models to estimate KL divergence.
+
 #### 2.1.1\. Function: `prep_data(Xs, ys, Xt, yt, test=.1, task=None, random_state=42)` 
    
     Function that gets data and prepare it to run the tests
@@ -111,6 +113,8 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
             
     Output: Xs_train, Xs_test, ys_train, ys_test, Zs_train, Zs_test
             Xt_train, Xt_test, yt_train, yt_test, Zt_train, Zt_test
+            
+Here Z stands for (X,y).
             
             
             
@@ -158,9 +162,11 @@ Model to estimate the DKL using the classification approach to density ratio est
 <a name="2.2"></a>
 ### 2.2\.  `cdist'
 
+Module containing classes of models to estimate the conditional distribution of $Y|X$.
+
 #### 2.2.1\. Class: `cde_reg`
 
-Model for Y|X=x. We assume that Y|X=x ~ Normal(f(x),sigma2), where f(x) is a function of the features. (This is class in Scikit-Learn style)
+Model for Y|X=x. We assume that Y|X=x ~ Normal(f(x),sigma2), where f(x) is a function of the features. (This is class in Scikit-Learn style).
 
 *The user could adapt this class in order to use different models than the Normal one.*
 
@@ -174,7 +180,7 @@ Model for Y|X=x. We assume that Y|X=x ~ Normal(f(x),sigma2), where f(x) is a fun
 
 - `fit(self, X, y, random_seed=None)`
         
-Function that fits the conditional density model;
+        Function that fits the conditional density model;
 
         Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
                 (ii)  y: Pandas Dataframe of label - use the 'prep_data' function to prepare your data;
@@ -182,6 +188,114 @@ Function that fits the conditional density model;
  
 - `sample(self, X)`
         
-Function that samples Y|X=x using the probabilistic model Y|X=x ~ Normal(f(x),sigma2)) with fitted model
-       
+        Function that samples Y|X=x using the probabilistic model Y|X=x ~ Normal(f(x),sigma2)) with fitted model
+        
+        Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
+        Output: (i)   Samples from the conditional distribution.
+      
+      
+#### 2.2.2\. Class: `cde_class`
 
+Model for P(Y=1|X), that is, binary probabilistic classifier. See that Y|X=x ~ Multinomial(n=1,p(x)), where p(.) is a function of the features. (This is class in Scikit-Learn style)
+
+    
+- `__init__(self, boost=True, validation_split=.1, cat_features=None, cv=5)`
+        
+
+        Input:  (i)   boost: if TRUE, we use CatBoost as classifier - otherwise, we use a not regularized logistic regression;
+                (ii)  validation_split: portion of the training data (Zs,Zt) used to early stop CatBoost - this parameter is not used if 'boost'==FALSE;
+                (iii) cat_features: list containing all categorical features indices - used only if 'boost'==TRUE;
+                (iv)  cv: number of CV folds used to validade the logistic regression classifier - this parameter is not used if 'boost'==TRUE;
+
+    
+- `fit(self, X, y, random_seed=None)`
+        
+        Function that fits the classification model in order to estimate P(Y=1|X);
+        
+        Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
+                (ii)  y: Pandas Dataframe of label - use the 'prep_data' function to prepare your data;
+                
+        Output: None
+   
+            
+- `sample(self, X)` 
+        
+        Function that samples Y|X=x using the probabilistic fitted model \hat{P}(Y=y|X=x);
+        
+        Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
+        
+        Output: (i)   Samples from the conditional distribution.
+        
+        
+<a name="2.3"></a>
+### 2.3\.  `tests'
+
+Module containing hypotheses tests functions.
+
+#### 2.3.1\. Function: `ShiftDiagnostics(Xs_test, ys_test, Xt_test, yt_test, totshift_model, covshift_model, labshift_model, cd_model, task, n_bins=10, B=500, verbose=True)`
+
+    Function that returns results for all the tests
+    
+    Input:  (i)    Xs_test and ys_test: Two Pandas dataframes with X and y from the source population - use the 'prep_data' function to prepare your data;
+            (ii)   Xt_test and yt_test: Two Pandas dataframes with X and y from the target population - use the 'prep_data' function to prepare your data;
+            (iii)  totshift_model: KL model used to estimate the Dkl between the two joint distributions of (X,y) (trained using training set);
+            (iv)   covshift_model: KL model used to estimate the Dkl between the two marginal distributions of features X (trained using training set);
+            (v)    labshift_model: KL model used to estimate the Dkl between the two marginal distributions of labels y (trained using training set) - you can set labshift_model=None if task=='class' and, in this case, the function will call "KL_multinomial" as estimator;
+            (vi)   cd_model: conditional density model equiped with 'sample' function. See documentation for more details;
+            (vii)  task: 'class' or 'reg' for classification or regression;
+            (viii) n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles. We use binning only to get the p-value and we report the original KL estimate;
+            (ix)   B: number of permutations used to calculate p-value;
+            
+    Output: (i) Dictionary containing the pvalues, the estimates of the shifts (Dkl's) and the permutations values;
+
+
+#### 2.3.2\. Function: `Permut(Zs, Zt, shift_model, B=500, verbose=True)` 
+    
+    Function that returns the permutation p-values for testing H0 (Pt=Ps) for distributions of Z, where Z can be X, y, or (X,y)
+    
+    Input:  (i)   Zs: Pandas dataframe with Z (typically X or (X,y)) from the source population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (ii)  Zt: Pandas dataframe with Z (typically X or (X,y)) from the target population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (iii) shift_model: KL model used to estimate the Dkl between Pt and Ps (trained using training set);
+            (iv)  B: number of permutations used to calculate p-value;
+            
+    Output: (i) Dictionary containing the pvalue, the estimate of the shift (Dkl's) and the permutations values;
+    
+    
+#### 2.3.3\. Function: `PermutDiscrete(Zs, Zt, B=500, verbose=True)` 
+    
+    Function that returns the permutation p-values for testing H0 (Pt=Ps) for distributions of Z (typically y in classification problems). **We need a discrete onehot-encoded object. Use the 'prep_data' function to prepare your data.**
+    
+    Input:  (i)   Zs: Pandas dataframe with discrete onehot-encoded Z (typically y in classification problems) from the source population (test set prefered) - *use the 'prep_data' function to prepare your data*;
+            (ii)  Zt: Pandas dataframe with discrete onehot-encoded Z (typically y in  classification problems) from the target population (test set prefered) - *use the 'prep_data' function to prepare your data*;
+            (iii) shift_model: KL model used to estimate the Dkl between Pt and Ps (trained using training set);
+            (iv)  B: number of permutations used to calculate p-value;
+            
+    Output: (i) Dictionary containing the pvalue, the estimate of the shift (Dkl's) and the permutations values;
+
+
+#### 2.3.4\. Function: `LocalPermut(Xs, ys, Xt, yt, totshift_model, labshift_model, task, n_bins=10, B=500, verbose=True)`
+    
+    Function that returns the local permutation p-values for testing H0 (Pt=Ps) for the conditional distributions of X|Y (y discrete)
+    
+    Input:  (i)   Xs and ys: Two Pandas dataframes with X and y from the source population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (ii)  Xt and yt: Two Pandas dataframes with X and y from the target population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (iii) totshift_model: KL model used to estimate the Dkl between the two joint distributions of (X,y) (trained using training set);
+            (iv)  labshift_model: KL model used to estimate the Dkl between the two marginal distributions of labels y (trained using training set);
+            (v)   task: 'class' or 'reg' for classification or regression;
+            (vi)  n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles. We use binning only to get the p-value and we report the original KL estimate;
+            (vii) B: number of permutations used to calculate p-value;
+            
+    Output: (i) Dictionary containing the pvalue, the estimate of the shift (DKL's) and the permutations values. In case of label binning, this function uses the binned variables to get the pvalue but it will return the non-binned DKL estimate;
+
+#### 2.3.5\. Function: `CondRand(Xs, ys, Xt, yt, cd_model, totshift_model, covshift_model,B=500, verbose=True)`
+    
+    Function that returns the conditional randomization p-values for testing H0 (Pt=Ps) for the conditional distributions of Y|X
+    
+    Input:  (i)   Xs and ys: Two Pandas dataframes with X and y from the source population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (ii)  Xt and yt: Two Pandas dataframes with X and y from the target population (test set prefered) - use the 'prep_data' function to prepare your data;
+            (iii) cd_model: conditional density model equiped with 'sample' function. See *cdist* module for more details;
+            (iv)  totshift_model: KL model used to estimate the Dkl between the two joint distributions of (X,y) (trained using training set);
+            (v)   covshift_model: KL model used to estimate the Dkl between the two marginal distributions of features X (trained using training set);
+            (v)   B: number of permutations used to calculate p-value;
+            
+    Output: (i) Dictionary containing the pvalue, the estimate of the shift (Dkl's) and the permutations values;
