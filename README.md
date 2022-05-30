@@ -88,7 +88,7 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
 2. Preparing data with `prep_data` function;
 3. Instantiating and training models to estimate KL divergence using `KL` class;
 4. Instantiating and training models to estimate the conditional distirbution of $Y|X$ using `cdist` module (in case of testing for concept shift of type 2;
-5. Testing different types of shift using the `tests' module. 
+5. Testing different types of shift using the `tests` module. 
 
 
 --------------
