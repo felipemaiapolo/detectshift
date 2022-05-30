@@ -103,7 +103,7 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
     
 
     
-    '''
+   
     Function that gets data and prepare it to run the tests
     
     Input:  (i)   Xs and Xt: 2d-numpy array or Pandas Dataframe containing features from the source and target domain;
@@ -114,5 +114,5 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
             
     Output: Xs_train, Xs_test, ys_train, ys_test, Zs_train, Zs_test
             Xt_train, Xt_test, yt_train, yt_test, Zt_train, Zt_test
-    '''
+ 
 
