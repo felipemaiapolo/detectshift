@@ -49,13 +49,15 @@ def Permut(Zs, Zt, shift_model, B=500, verbose=True):
 def PermutDiscrete(Zs, Zt, B=500, verbose=True):
     
     '''
-    Function that returns the permutation p-values for testing H0 (Pt=Ps) for distributions of Z, where Z can be X, y, or (X,y)
+    Function that returns the permutation p-values for testing H0 (Pt=Ps) for distributions of Z (typically y in classification problems). **We need a discrete onehot-encoded object. Use the 'prep_data' function to prepare your data.**
     
-    Input:  (i)   Zs: Pandas dataframe with onehot encoded discrete Z from the source population - use the 'prep_data' function to prepare your data;
-            (ii)  Zt: Pandas dataframe with onehot encoded discrete Z from the target population - use the 'prep_data' function to prepare your data;
-            (iii) B: number of permutations used to calculate p-value;
+    Input:  (i)   Zs: Pandas dataframe with discrete onehot-encoded Z (typically y in classification problems) from the source population (test set prefered) - **use the 'prep_data' function to prepare your data**;
+            (ii)  Zt: Pandas dataframe with discrete onehot-encoded Z (typically y in  classification problems) from the target population (test set prefered) - **use the 'prep_data' function to prepare your data**;
+            (iii) shift_model: KL model used to estimate the Dkl between Pt and Ps (trained using training set);
+            (iv)  B: number of permutations used to calculate p-value;
             
     Output: (i) Dictionary containing the pvalue, the estimate of the shift (Dkl's) and the permutations values;
+
     '''
     
     #Preparing
@@ -98,7 +100,7 @@ def LocalPermut(Xs, ys, Xt, yt,
             (iii) totshift_model: KL model used to estimate the Dkl between the two joint distributions of (X,y) (trained using training set);
             (iv)  labshift_model: KL model used to estimate the Dkl between the two marginal distributions of labels y (trained using training set);
             (v)   task: 'class' or 'reg' for classification or regression;
-            (vi)  n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles;
+            (vi)  n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles. We use binning only to get the p-value and we report the original KL estimate;
             (vii) B: number of permutations used to calculate p-value;
             
     Output: (i) Dictionary containing the pvalue, the estimate of the shift (DKL's) and the permutations values. In case of label binning, this function uses the binned variables to get the pvalue but it will return the non-binned DKL estimate;
@@ -264,7 +266,7 @@ def ShiftDiagnostics(Xs_test, ys_test, Xt_test, yt_test,
             (v)    labshift_model: KL model used to estimate the Dkl between the two marginal distributions of labels y (trained using training set) - you can set labshift_model=None if task=='class' and, in this case, the function will call "KL_multinomial" as estimator;
             (vi)   cd_model: conditional density model equiped with 'sample' function. See documentation for more details;
             (vii)  task: 'class' or 'reg' for classification or regression;
-            (viii) n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles;
+            (viii) n_bins: number of bins if performing regression task. If task=='reg', this function will evenly bin ys, yt based on y=(ys,yt) quantiles. We use binning only to get the p-value and we report the original KL estimate;
             (ix)   B: number of permutations used to calculate p-value;
             
     Output: (i) Dictionary containing the pvalues, the estimates of the shifts (Dkl's) and the permutations values;
