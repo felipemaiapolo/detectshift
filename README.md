@@ -196,7 +196,7 @@ Model for Y|X=x. We assume that Y|X=x ~ Normal(f(x),sigma2), where f(x) is a fun
       
 #### 2.2.2\. Class: `cde_class`
 
-Model for P(Y=1|X), that is, binary probabilistic classifier. See that Y|X=x ~ Multinomial(n=1,p(x)), where p(.) is a function of the features. (This is class in Scikit-Learn style)
+Model for P(Y=y|X), that is, binary probabilistic classifier. See that Y|X=x ~ Multinomial(n=1,p(x)), where p(.) is a function of the features. (This is class in Scikit-Learn style)
 
     
 - `__init__(self, boost=True, validation_split=.1, cat_features=None, cv=5)`
@@ -210,7 +210,7 @@ Model for P(Y=1|X), that is, binary probabilistic classifier. See that Y|X=x ~ M
     
 - `fit(self, X, y, random_seed=None)`
         
-        Function that fits the classification model in order to estimate P(Y=1|X);
+        Function that fits the classification model in order to estimate P(Y=y|X);
         
         Input:  (i)   X: Pandas Dataframe of features - use the 'prep_data' function to prepare your data;
                 (ii)  y: Pandas Dataframe of label - use the 'prep_data' function to prepare your data;
