@@ -21,8 +21,12 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 0. [Quick start (demo)](#0)
 1. [Introduction](#1)
-    1. [Installing package](#1.1)
+    1. [Installing and loading package ](#1.1)
     2. [Step to use](#1.2)
+2. [Modules](#2)
+    1. [*tools*](#2.1)
+    2. [*cdist*](#2.2)
+    3. [*tests*](#2.3)
 
 
 --------------
@@ -88,4 +92,27 @@ If you take a look at *DetectShift* [demonstrations](#0), you will realize that 
 
 
 --------------
+
+<a name="2"></a>
+## 2\. Modules
+
+<a name="2.1"></a>
+### 2.1\.  *tools*
+
+#### 2.1.1\. `prep_data(Xs, ys, Xt, yt, test=.1, task=None, random_state=42)` 
+    
+
+    
+    '''
+    Function that gets data and prepare it to run the tests
+    
+    Input:  (i)   Xs and Xt: 2d-numpy array or Pandas Dataframe containing features from the source and target domain;
+            (ii)  ys and yt: 1d-numpy array or 1-column Pandas Dataframe containing labels. If task=='class', then ys and yt must contain all labels [0,1,...,K-1], where K is the number of classes;
+            (iii) test: fraction of the data going to the test set;
+            (iv)  task: 'reg' or 'class' for regression or classification;
+            (v)   random_state: seed used in the data splitting
+            
+    Output: Xs_train, Xs_test, ys_train, ys_test, Zs_train, Zs_test
+            Xt_train, Xt_test, yt_train, yt_test, Zt_train, Zt_test
+    '''
 
