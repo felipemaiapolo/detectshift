@@ -160,7 +160,7 @@ Model to estimate the DKL using the classification approach to density ratio est
 
 
 <a name="2.2"></a>
-### 2.2\.  `cdist'
+### 2.2\.  `cdist`
 
 Module containing classes of models to estimate the conditional distribution of $Y|X$.
 
@@ -228,7 +228,7 @@ Model for P(Y=1|X), that is, binary probabilistic classifier. See that Y|X=x ~ M
         
         
 <a name="2.3"></a>
-### 2.3\.  `tests'
+### 2.3\.  `tests`
 
 Module containing hypotheses tests functions.
 
