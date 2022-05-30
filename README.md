@@ -21,7 +21,9 @@ In case you have any question or suggestion, please get in touch sending us an e
 
 0. [Quick start (demo)](#0)
 1. [Introduction](#1)
-2. [Installing package](#2)
+    1. [Installing package](#1.1)
+    2. [Step to use](#1.2)
+
 
 --------------
 
@@ -59,11 +61,8 @@ The test statistic used is a KL divergence estimator while the p-values are obta
 
 Check [**our paper**](https://arxiv.org/abs/2205.08340) for more details and precise language. 
 
---------------
-
-<a name="2"></a>
-## 2\. Installing package 
-
+<a name="1.1"></a>
+### 1.1\.  Installing and loading package 
 
 You can install our package running the following command on terminal
 ``` :sh
@@ -75,3 +74,18 @@ You can load *DetectShift* in the following way
 ```python
 import detectshift as ds
 ```
+
+<a name="1.2"></a>
+### 1.2\.  Steps to use
+
+If you take a look at *DetectShift* [demonstrations](#0), you will realize that following some steps to use *DetectShift* are needed. The steps are:
+
+- Loading *DetectShift*;
+- Preparing data with *prep_data* function;
+- Instantiating and training models to estimate KL divergence using *KL* class;
+- Instantiating and training models to estimate the conditional distirbution of $Y|X$ using *cdist* module (in case of testing for concept shift of type 2;
+- Testing different types of shift using the *tests* module. 
+
+
+--------------
+
