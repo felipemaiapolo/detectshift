@@ -68,7 +68,14 @@ Check [**our paper**](https://arxiv.org/abs/2205.08340) for more details and pre
 <a name="1.1"></a>
 ### 1.1\.  Installing and loading package 
 
-You can install our package running the following command on terminal
+You can install our package running the one of the following commands on terminal
+
+``` :sh
+$ pip install detectshift
+```
+
+or 
+
 ``` :sh
 $ pip install git+https://github.com/felipemaiapolo/detectshift
 ```
