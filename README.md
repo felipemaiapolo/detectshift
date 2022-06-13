@@ -1,5 +1,8 @@
 # ***DetectShift*** - Dataset shift diagnostics in Python
 
+[![PyPI](https://img.shields.io/pypi/v/detectshift.svg)](https://pypi.python.org/pypi/detectshift)
+[![PyPI](https://img.shields.io/pypi/dm/detectshift.svg)](https://pypi.python.org/pypi/detectshift)
+
 This package is based on the ideas presented in
 
 [**Polo, F. M., Izbicki, R., Lacerda Jr, E. G., Ibieta-Jimenez, J. P., & Vicente, R. (2022). A unified framework for dataset shift diagnostics. arXiv preprint arXiv:2205.08340.**](https://arxiv.org/abs/2205.08340). 
