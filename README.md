@@ -1,7 +1,6 @@
 # ***DetectShift*** - Dataset shift diagnostics in Python
 
 [![PyPI](https://img.shields.io/pypi/v/detectshift.svg)](https://pypi.python.org/pypi/detectshift)
-[![PyPI](https://img.shields.io/pypi/dm/detectshift.svg)](https://pypi.python.org/pypi/detectshift)
 
 This package is based on the ideas presented in
 
