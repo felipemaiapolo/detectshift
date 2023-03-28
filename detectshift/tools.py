@@ -19,7 +19,7 @@ def get_dummies(y):
     if type(y)==np.ndarray:
         y=y.reshape(-1,1)
         
-    onehot = OneHotEncoder(drop='first', sparse=False).fit(y)
+    onehot = OneHotEncoder(drop='first', sparse_output=False).fit(y)
     out=pd.DataFrame(onehot.transform(y))
     out.columns = ['y'+str(j) for j in range(out.shape[1])]
     return out.astype('int32')
