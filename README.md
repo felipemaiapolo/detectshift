@@ -4,7 +4,7 @@
 
 This package is based on the ideas presented in
 
-**Polo, F. M., Izbicki, R., Lacerda Jr, E. G., Ibieta-Jimenez, J. P., & Vicente, R. (2023). A unified framework for dataset shift diagnostics. Information Sciences, 119612.** [arXiv](https://arxiv.org/abs/2205.08340). 
+**Polo, F. M., Izbicki, R., Lacerda Jr, E. G., Ibieta-Jimenez, J. P., & Vicente, R. (2023). A unified framework for dataset shift diagnostics. Information Sciences, 119612.** (check version here)[arXiv](https://arxiv.org/abs/2205.08340). 
 
 Please cite us in the following way
 
