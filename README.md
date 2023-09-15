@@ -4,18 +4,20 @@
 
 This package is based on the ideas presented in
 
-[**Polo, F. M., Izbicki, R., Lacerda Jr, E. G., Ibieta-Jimenez, J. P., & Vicente, R. (2022). A unified framework for dataset shift diagnostics. arXiv preprint arXiv:2205.08340.**](https://arxiv.org/abs/2205.08340). 
+**Polo, F. M., Izbicki, R., Lacerda Jr, E. G., Ibieta-Jimenez, J. P., & Vicente, R. (2023). A unified framework for dataset shift diagnostics. Information Sciences, 119612.** [arXiv](https://arxiv.org/abs/2205.08340). 
 
 Please cite us in the following way
 
-    @article{polo2022unified,
+    @article{polo2023unified,
       title={A unified framework for dataset shift diagnostics},
       author={Polo, Felipe Maia and Izbicki, Rafael and Lacerda Jr, Evanildo Gomes and Ibieta-Jimenez, Juan Pablo and Vicente, Renato},
-      journal={arXiv preprint arXiv:2205.08340},
-      year={2022}
+      journal={Information Sciences},
+      pages={119612},
+      year={2023},
+      publisher={Elsevier}
     }
 
-In case you have any question or suggestion, please get in touch sending us an e-mail in *felipemaiapolo@gmail.com*.
+In case you have any questions or suggestions, please get in touch by sending us an e-mail at *felipemaiapolo@gmail.com*.
 
 --------------
 
